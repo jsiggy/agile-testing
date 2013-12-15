@@ -8,9 +8,9 @@ public class Fraction {
       this.numerator = numerator;
    }
 
-   public Fraction plus(Fraction addend) {
-      if (addend.numerator != 0)
-         return addend;
+   public Fraction plus(Fraction that) {
+      if (that.numerator != 0)
+         return that;
       else
          return this;
    }
