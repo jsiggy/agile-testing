@@ -7,8 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class FractionTest {
    @Test
    public void zeroPlusZero() {
-      Fraction sum = new Fraction(0).plus(new Fraction(0));
-      assertEquals(0, sum.intValue());
+      assertEquals(0, new Fraction(0).plus(new Fraction(0)).intValue());
    }
 
    @Test
@@ -19,7 +18,11 @@ public class FractionTest {
 
    @Test
    public void nonZeroPlusZero() {
-      Fraction sum = new Fraction(5).plus(new Fraction(0));
+      Fraction first = new Fraction(5);
+      Fraction second = new Fraction(0);
+
+      Fraction sum = first.plus(second);
+
       assertEquals(5, sum.intValue());
    }
 
