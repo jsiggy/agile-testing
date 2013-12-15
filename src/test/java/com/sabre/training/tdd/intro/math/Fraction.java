@@ -9,7 +9,10 @@ public class Fraction {
    }
 
    public Fraction plus(Fraction addend) {
-      return addend;
+      if (addend.numerator != 0)
+         return addend;
+      else
+         return this;
    }
 
    public int intValue() {
