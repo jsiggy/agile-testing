@@ -9,10 +9,7 @@ public class Fraction {
    }
 
    public Fraction plus(Fraction that) {
-      if (that.numerator != 0)
-         return new Fraction(this.numerator + that.numerator);
-      else
-         return this;
+      return new Fraction(this.numerator + that.numerator);
    }
 
    public int intValue() {
