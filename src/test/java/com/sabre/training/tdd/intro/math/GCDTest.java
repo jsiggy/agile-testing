@@ -19,6 +19,12 @@ public class GCDTest {
       assertEquals(-1, gcd(-2, -3));
    }
 
+   @Test
+   public void multipleOfEachOther() {
+      assertEquals(3, gcd(3, 9));
+      assertEquals(5, gcd(5, 30));
+   }
+
    private int gcd(int a, int b) {
       while (b != 0) {
          int t = b;
