@@ -28,6 +28,13 @@ public class FractionTest {
       assertEquals(new Fraction(5), new Fraction(5, 1));
    }
 
+   @Test
+   public void negativeValuesOppositeForDenominatorAndNumerator() {
+      assertEquals(new Fraction(5, -1), new Fraction(-5, 1));
+      assertEquals(new Fraction(-5, 1), new Fraction(-5, 1));
+      assertEquals(new Fraction(5, 1), new Fraction(-5, -1));
+   }
+
    // addition
    @Test
    public void zeroPlusZero() {
