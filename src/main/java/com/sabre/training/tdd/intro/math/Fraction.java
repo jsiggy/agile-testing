@@ -20,14 +20,6 @@ public class Fraction {
       return new Fraction(this.numerator + that.numerator, this.denominator);
    }
 
-   public int numerator() {
-      return numerator;
-   }
-
-   public int denominator() {
-      return denominator;
-   }
-
    @Override public String toString() {
       return numerator + "/" + denominator;
    }
