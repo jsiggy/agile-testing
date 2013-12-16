@@ -12,6 +12,13 @@ public class GCDTest {
       assertEquals(-1, gcd(-1, -1));
    }
 
+   @Test
+   public void noCommonFactor() {
+      assertEquals(1, gcd(4, 7));
+      assertEquals(1, gcd(2, 3));
+      assertEquals(-1, gcd(-2, -3));
+   }
+
    private int gcd(int a, int b) {
       while (b != 0) {
          int t = b;
