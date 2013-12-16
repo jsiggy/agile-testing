@@ -2,7 +2,7 @@ package com.sabre.training.tdd.intro.math;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class FractionTest {
    @Test
@@ -35,5 +35,10 @@ public class FractionTest {
       Fraction sum = new Fraction(1, 5).plus(new Fraction(2, 5));
       assertEquals(3, sum.numerator());
       assertEquals(5, sum.denominator());
+   }
+
+   @Test
+   public void equalsForSameNumeratorAndDenominator() {
+      assertEquals(new Fraction(3, 5), new Fraction(3, 5));
    }
 }

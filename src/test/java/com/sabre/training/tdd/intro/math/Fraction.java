@@ -1,5 +1,8 @@
 package com.sabre.training.tdd.intro.math;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 public class Fraction {
    private final int numerator;
    private final int denominator;
@@ -27,5 +30,9 @@ public class Fraction {
 
    public int denominator() {
       return denominator;
+   }
+
+   @Override public String toString() {
+      return numerator + "/" + denominator;
    }
 }
