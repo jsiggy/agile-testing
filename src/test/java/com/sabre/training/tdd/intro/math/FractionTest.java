@@ -1,5 +1,6 @@
 package com.sabre.training.tdd.intro.math;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -58,5 +59,16 @@ public class FractionTest {
    @Test
    public void addWithDifferentDenominatorsNoReduction() {
       assertEquals(new Fraction(5, 6), new Fraction(1, 2).plus(new Fraction(1, 3)));
+   }
+
+   @Test
+   public void reduceWhenAlreadyInLowestTerms() {
+      assertEquals(new Fraction(3, 4), new Fraction(3, 4));
+   }
+
+   @Test
+   @Ignore("waiting for gcd impl")
+   public void reduceToNotWholeNumber() {
+      assertEquals(new Fraction(3, 4), new Fraction(6, 8)); // gcd
    }
 }
