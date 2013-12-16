@@ -1,41 +1,11 @@
 package com.sabre.training.tdd.intro.math;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class FractionTest {
 
-   // equals
-   @Test
-   public void equalsForSameNumeratorAndDenominator() {
-      assertEquals(new Fraction(3, 5), new Fraction(3, 5));
-   }
-
-   @Test
-   public void notEqualsForDifferentNumeratorAndSameDenominator() {
-      assertNotEquals(new Fraction(2, 5), new Fraction(4, 5));
-   }
-
-   @Test
-   public void notEqualsForSameNumeratorAndDifferentDenominator() {
-      assertNotEquals(new Fraction(1, 3), new Fraction(1, 5));
-   }
-
-   @Test
-   public void wholeNumberEqualsSameFraction() {
-      assertEquals(new Fraction(5), new Fraction(5, 1));
-   }
-
-   @Test
-   public void negativeValuesOppositeForDenominatorAndNumerator() {
-      assertEquals(new Fraction(5, -1), new Fraction(-5, 1));
-      assertEquals(new Fraction(-5, 1), new Fraction(-5, 1));
-      assertEquals(new Fraction(5, 1), new Fraction(-5, -1));
-   }
-
-   // addition
    @Test
    public void zeroPlusZero() {
       assertEquals(new Fraction(0), new Fraction(0).plus(new Fraction(0)));
@@ -87,40 +57,18 @@ public class FractionTest {
    }
 
    @Test
-   public void reduceResultsEvenWhenDenominatorsAreTheSame() {
+   public void reducesResultsEvenWhenDenominatorsAreTheSame() {
       assertEquals(new Fraction(3, 2), new Fraction(3, 4).plus(new Fraction(3, 4)));
    }
 
    @Test
-   public void negativeFractionIsReducing() {
+   public void reducesNegativeFractions() {
       assertEquals(new Fraction(1, 2), new Fraction(-1, 4).plus(new Fraction(3, 4)));
       assertEquals(new Fraction(-1, 8), new Fraction(3, 8).plus(new Fraction(-1, 2)));
    }
 
    @Test
-   @Ignore("Waiting on special case handling for gcd")
-   public void reduceToNegativeNumeratorAndDenominator() {
+   public void reducesToNegativeNumeratorAndDenominator() {
       assertEquals(new Fraction(1, 2), new Fraction(-1, 4).plus(new Fraction(-3, -4)));
-   }
-
-   // reduce
-   @Test
-   public void reduceWhenAlreadyInLowestTerms() {
-      assertEquals(new Fraction(3, 4), new Fraction(3, 4));
-   }
-
-   @Test
-   public void reduceToNotWholeNumber() {
-      assertEquals(new Fraction(3, 4), new Fraction(6, 8));
-   }
-
-   @Test
-   public void reduceToWholeNumber() {
-      assertEquals(new Fraction(6), new Fraction(24, 4));
-   }
-
-   @Test
-   public void reduceForZero() {
-      assertEquals(new Fraction(0), new Fraction(0, 19293));
    }
 }

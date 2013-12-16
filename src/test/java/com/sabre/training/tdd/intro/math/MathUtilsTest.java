@@ -37,4 +37,12 @@ public class MathUtilsTest {
       assertEquals(4, MathUtils.gcd(24, -28));
       assertEquals(4, MathUtils.gcd(-24, 28));
    }
+
+   // exploratory tests - how does gcd deal with 0
+   @Test
+   public void zero() {
+      assertEquals(1, MathUtils.gcd(1, 0));
+      assertEquals(5, MathUtils.gcd(0, 5));
+      assertEquals(0, MathUtils.gcd(0, 0));
+   }
 }
