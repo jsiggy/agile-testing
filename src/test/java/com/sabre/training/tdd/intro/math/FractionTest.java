@@ -6,6 +6,26 @@ import static org.junit.Assert.*;
 
 public class FractionTest {
    @Test
+   public void equalsForSameNumeratorAndDenominator() {
+      assertEquals(new Fraction(3, 5), new Fraction(3, 5));
+   }
+
+   @Test
+   public void notEqualsForDifferentNumeratorAndSameDenominator() {
+      assertNotEquals(new Fraction(2, 5), new Fraction(4, 5));
+   }
+
+   @Test
+   public void notEqualsForSameNumeratorAndDifferentDenominator() {
+      assertNotEquals(new Fraction(1, 3), new Fraction(1, 5));
+   }
+
+   @Test
+   public void wholeNumberEqualsSameFraction() {
+      assertEquals(new Fraction(5), new Fraction(5, 1));
+   }
+
+   @Test
    public void zeroPlusZero() {
       assertEquals(0, new Fraction(0).plus(new Fraction(0)).numerator());
    }
@@ -36,10 +56,5 @@ public class FractionTest {
       Fraction sum = new Fraction(1, 5).plus(new Fraction(2, 5));
       assertEquals(3, sum.numerator());
       assertEquals(5, sum.denominator());
-   }
-
-   @Test
-   public void equalsForSameNumeratorAndDenominator() {
-      assertEquals(new Fraction(3, 5), new Fraction(3, 5));
    }
 }
