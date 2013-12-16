@@ -20,9 +20,16 @@ public class GCDTest {
    }
 
    @Test
-   public void multipleOfEachOther() {
+   public void oneIsMultipleOfTheOther() {
       assertEquals(3, gcd(3, 9));
       assertEquals(5, gcd(5, 30));
+   }
+
+   @Test
+   public void commonFactors() {
+      assertEquals(2, gcd(6, 8));
+      assertEquals(7, gcd(49, 315));
+      assertEquals(-4, gcd(-24, -28));
    }
 
    private int gcd(int a, int b) {
