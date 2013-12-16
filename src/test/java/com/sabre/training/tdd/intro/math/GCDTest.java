@@ -6,8 +6,10 @@ import static org.junit.Assert.*;
 
 public class GCDTest {
    @Test
-   public void oneAndOne() {
+   public void reflexiveTests() {
       assertEquals(1, gcd(1, 1));
+      assertEquals(2, gcd(2, 2));
+      assertEquals(-1, gcd(-1, -1));
    }
 
    private int gcd(int a, int b) {
