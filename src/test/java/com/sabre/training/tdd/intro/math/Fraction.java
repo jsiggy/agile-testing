@@ -20,10 +20,6 @@ public class Fraction {
       return new Fraction(this.numerator + that.numerator, this.denominator);
    }
 
-   public int intValue() {
-      return this.numerator;
-   }
-
    public int numerator() {
       return numerator;
    }

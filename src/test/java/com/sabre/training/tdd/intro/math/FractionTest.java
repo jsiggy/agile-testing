@@ -7,27 +7,28 @@ import static org.junit.Assert.*;
 public class FractionTest {
    @Test
    public void zeroPlusZero() {
-      assertEquals(0, new Fraction(0).plus(new Fraction(0)).intValue());
+      assertEquals(0, new Fraction(0).plus(new Fraction(0)).numerator());
    }
 
    @Test
    public void zeroPlusNonZero() {
-      assertEquals(3, new Fraction(0).plus(new Fraction(3)).intValue());
+      assertEquals(3, new Fraction(0).plus(new Fraction(3)).numerator());
    }
 
    @Test
    public void nonZeroPlusZero() {
-      assertEquals(5, new Fraction(5).plus(new Fraction(0)).intValue());
+      assertEquals(5, new Fraction(5).plus(new Fraction(0)).numerator());
    }
 
    @Test
    public void nonZeroPlusNonZero() {
-      assertEquals(7, new Fraction(3).plus(new Fraction(4)).intValue());
+      assertEquals(7, new Fraction(3).plus(new Fraction(4)).numerator());
    }
 
    @Test
    public void negativePlusNegative() {
-      assertEquals(-5, new Fraction(-2).plus(new Fraction(-3)).intValue());
+      Fraction fraction = new Fraction(-2).plus(new Fraction(-3));
+      assertEquals(-5, fraction.numerator());
    }
 
    @Test
