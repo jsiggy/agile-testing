@@ -8,7 +8,7 @@ public class OrderService {
 
    public boolean order(String productId, int amountOfProduct) {
       try {
-         return AmazonBookService.placeOrder(productId, amountOfProduct);
+         return new AmazonBookService().placeOrder(productId, amountOfProduct);
       } catch (InvalidAmazonProductIdException e) {
          System.out.println("**** Invalid order id");
       } catch (InvalidAmazonProductAmountException e) {
