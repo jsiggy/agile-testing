@@ -12,7 +12,7 @@ public class OrderService {
       try {
          return amazonBookService.placeOrder(productId, amountOfProduct);
       } catch (InvalidAmazonProductIdException e) {
-         System.out.println("**** Invalid order id");
+         throw new UnknownProductIdException("Bad product id " + productId, e);
       } catch (InvalidAmazonProductAmountException e) {
          System.out.println("**** Invalid amount requested");
       }
