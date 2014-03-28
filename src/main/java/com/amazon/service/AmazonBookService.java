@@ -2,7 +2,7 @@ package com.amazon.service;
 
 public class AmazonBookService {
 
-   public static boolean placeOrder(String productId, int units) throws InvalidAmazonProductIdException, InvalidAmazonProductAmountException {
+   public boolean placeOrder(String productId, int units) throws InvalidAmazonProductIdException, InvalidAmazonProductAmountException {
       System.out.println("calling Amazon Book Service for " + units + " units of " + productId);
       networkLatencyDelay();
       if (productId == null || productId.length() < 5)
