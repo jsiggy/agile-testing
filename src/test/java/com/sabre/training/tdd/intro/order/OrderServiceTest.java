@@ -4,27 +4,23 @@ import com.amazon.service.AmazonBookService;
 import com.amazon.service.InvalidAmazonProductAmountException;
 import com.amazon.service.InvalidAmazonProductIdException;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
-import static org.junit.Assert.*;
+import static org.mockito.Mockito.verify;
 
+@RunWith(MockitoJUnitRunner.class)
 public class OrderServiceTest {
+   @Mock private AmazonBookService mockAmazonBookService;
+
    @Test
-   public void shouldUseAmazonBookServiceToPlaceOrder() {
-      MockAmazonBookService mockAmazonBookService = new MockAmazonBookService();
+   public void shouldUseAmazonBookServiceToPlaceOrder() throws InvalidAmazonProductAmountException, InvalidAmazonProductIdException {
 
       OrderService orderService = new OrderService();
       orderService.setAmazonBookService(mockAmazonBookService);
       orderService.order("product", 100);
 
-      assertTrue(mockAmazonBookService.wasCalled);
-   }
-
-   private class MockAmazonBookService extends AmazonBookService {
-      boolean wasCalled = false;
-
-      @Override public boolean placeOrder(String productId, int units) throws InvalidAmazonProductIdException, InvalidAmazonProductAmountException {
-         wasCalled = true;
-         return true;
-      }
+      verify(mockAmazonBookService).placeOrder("product", 100);
    }
 }
