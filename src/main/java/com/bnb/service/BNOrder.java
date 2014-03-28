@@ -4,19 +4,23 @@ public class BNOrder {
    private BNProduct product;
    private int amount;
 
-   public BNProduct getProduct() {
-      return product;
+   public BNOrder(BNProduct product, int amount) {
+      this.product = product;
+      this.amount = amount;
    }
 
-   public void setProduct(BNProduct product) {
-      this.product = product;
+   public BNProduct getProduct() {
+      return product;
    }
 
    public int getAmount() {
       return amount;
    }
 
-   public void setAmount(int amount) {
-      this.amount = amount;
+   @Override public String toString() {
+      return "BNOrder{" +
+         "product=" + product +
+         ", amount=" + amount +
+         '}';
    }
 }

@@ -16,4 +16,11 @@ public class BNProduct {
    public String getName() {
       return name;
    }
+
+   @Override public String toString() {
+      return "BNProduct{" +
+         "id=" + id +
+         ", name='" + name + '\'' +
+         '}';
+   }
 }
